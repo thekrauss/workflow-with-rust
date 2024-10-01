@@ -1,5 +1,6 @@
 
-# Git Automate
+# workflow-with-rust
+
 
 Ce projet est un outil en ligne de commande (CLI) écrit en Rust pour automatiser les étapes Git courantes, comme l'ajout de fichiers, le commit avec un message généré automatiquement, et le push vers une branche spécifiée. Cet outil permet de simplifier et d'accélérer le workflow Git en une seule commande.
 
@@ -21,13 +22,15 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 1. Clonez le dépôt dans votre environnement local :
 
    ```bash
-   git clone https://github.com/votre-utilisateur/git-automate.git
+   git clone https://github.com/thekrauss/workflow-with-rust
+.git
    ```
 
 2. Accédez au dossier du projet :
 
    ```bash
-   cd git-automate
+   cd workflow-with-rust
+
    ```
 
 3. Ajoutez la dépendance `names` dans votre fichier `Cargo.toml` si elle n'est pas déjà présente :
@@ -40,15 +43,21 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 4. Compilez le projet en mode release :
 
    ```bash
-   cargo build --release
+    $ cargo build --release
    ```
+   puis
+
+   ``` 
+    $ cargo  install--path . 
+   ```                                                                                                                            
+
 
 ## Utilisation
 
 1. Une fois le projet compilé, exécutez l'outil en utilisant la commande suivante :
 
    ```bash
-   ./target/release/git-automate
+   workflow
    ```
 
 2. Le programme exécutera les actions suivantes :
@@ -62,7 +71,7 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 Le programme est configuré pour pousser les changements sur la branche `main` par défaut. Si vous souhaitez changer la branche cible, vous pouvez modifier cette ligne dans le fichier `main.rs` :
 
 ```rust
-let branch = "main";  // Modifiez ici pour changer la branche par défaut
+let branch = "main";  
 ```
 
 Remplacez `"main"` par le nom de la branche que vous souhaitez utiliser (par exemple `"master"` ou `"develop"`).
