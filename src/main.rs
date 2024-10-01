@@ -12,7 +12,7 @@ fn commit_push(branch: &str) {
     if !add.status.success() {
         let error_message = String::from_utf8_lossy(&add.stderr);
         eprintln!("Error: Failed to add files to the git repo. Details: {}", error_message);
-        exit(1); // Ajout d'un point-virgule ici
+        exit(1); 
     }
 
     // Étape 2: git commit avec message généré automatiquement
